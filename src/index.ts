@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import {strategy} from "./interfaces";
+import {startWebhookServer} from "./gitWebhook";
 
 const strategies:strategy[] = []
 
@@ -16,7 +17,7 @@ function execShellCommand(cmd) {
     });
 }
 
-async function refreshStrategies():Promise<boolean>{
+export async function refreshStrategies():Promise<boolean>{
     try {
         await execShellCommand('tsc')
     } catch (e){
@@ -46,6 +47,7 @@ async function refreshStrategies():Promise<boolean>{
     return true
 }
 
-refreshStrategies().then((result)=>{
-    console.log(result)
-})
+// refreshStrategies().then((result)=>{
+//     console.log(result)
+// })
+startWebhookServer()
