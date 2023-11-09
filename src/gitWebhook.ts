@@ -1,7 +1,6 @@
 import * as http from 'http';
 import * as crypto from 'crypto';
 import * as path from "path";
-import * as process from "process";
 import {refreshStrategies} from "./refreshStrategy";
 
 const SECRET = process.env['GITHUB_WEBHOOK_SECRET']!;
