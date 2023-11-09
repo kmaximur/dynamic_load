@@ -1,0 +1,80 @@
+{
+//  "ts-node": {
+//    "compilerOptions": {
+//      "skipLibCheck": true,
+//      "target": "es2015"
+//    }
+//  },
+  "compilerOptions": {
+    "noEmitOnError": true,
+    "removeComments": true,
+    "sourceMap": false,
+    "allowJs": true,
+    //"checkJs": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "forceConsistentCasingInFileNames": true,
+
+
+    //    "requires": true,
+    //    "skipLibCheck": true,
+//        "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    //    "strict": true,
+    //    "noFallthroughCasesInSwitch": true,
+    //    "resolveJsonModule": true,
+    //    "isolatedModules": true,
+
+//    "noEmitOnError": true,
+//    "removeComments": true,
+//    "sourceMap": false,
+////    "esModuleInterop": true,
+//    "allowSyntheticDefaultImports": true,
+//
+//
+////    "esModuleInterop": true,
+//
+////    "strictNullChecks": true,
+////    "noImplicitAny": true,
+////    "noImplicitThis": true,
+////    "noUncheckedIndexedAccess": false,
+////    "allowJs": true,
+////    "checkJs": true,
+////    "skipLibCheck": true,
+////    "esModuleInterop": true,
+////    "strict": true,
+////    "forceConsistentCasingInFileNames": true,
+////    "noFallthroughCasesInSwitch": true,
+////    "resolveJsonModule": true,
+////    "isolatedModules": true,
+////    "noEmit": true,
+
+    "moduleResolution": "node",
+    "module": "commonjs", // проверка
+    "target": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "src/types/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
