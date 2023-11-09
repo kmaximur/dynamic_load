@@ -43,5 +43,6 @@ export async function refreshStrategies():Promise<boolean>{
         }
     }
     // strategies[0].onBar()
+    /// TODO сообщить на фронты через фасады новые стратегии
     return true
 }
