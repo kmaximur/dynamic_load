@@ -1,9 +1,8 @@
-import http from 'http';
-import crypto from 'crypto';
-import { exec } from 'child_process';
+import * as http from 'http';
+import * as crypto from 'crypto';
 import * as path from "path";
 import * as process from "process";
-import {refreshStrategies} from "./index";
+import {refreshStrategies} from "./refreshStrategy";
 
 const SECRET = process.env['GITHUB_WEBHOOK_SECRET']!;
 
@@ -26,7 +25,7 @@ export function startWebhookServer(){
                 if (isAllowed && isMaster && directory) {
                     try {
                         // full refresh (возможно если данный http сервер запущен отдельно)
-                        // exec(`pm2 stop lana & pm2 delete lana & cd ${directory} && git reset --hard origin/master && git pull origin master && npm i && npm update && tsc && pm2 start npm --name lana -- run startEnv`);
+                        // execShellCommand(`pm2 stop lana & pm2 delete lana & cd ${directory} && git reset --hard origin/master && git pull origin master && npm i && npm update && tsc && pm2 start npm --name lana -- run startEnv`);
                         refreshStrategies().then((result)=>{
                             console.log('получен вебхук github - обновляем стратегии, результат: ' + result)
                         })
