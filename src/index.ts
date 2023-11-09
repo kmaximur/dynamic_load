@@ -30,9 +30,9 @@ async function refreshStrategies():Promise<boolean>{
     const files= fs.readdirSync(dir);
     if(files.length){
         strategies.splice(0,strategies.length)
-        for (let i =0; i<files.length; i++){
-            const name = dir + '/' + files[i];
-            if (!fs.statSync(name).isDirectory() && path.extname(files[i]) == '.js'){
+        for (const file of files){
+            const name = dir + '/' + file;
+            if (!fs.statSync(name).isDirectory() && path.extname(file) == '.js'){
                 try {
                     let a = await import(name);
                     strategies.push(a.def)
